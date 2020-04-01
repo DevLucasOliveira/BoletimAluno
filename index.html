@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" >
+    <script src="scripts/main.js"></script>
+</head>
+
+<body id="body">
+
+<div class="container">
+    
+    <h1 class="title animated jackInTheBox" id="tittle">Boletim</h1>
+    <ul class="animated flipInX" *ngIf="mode=='list'">
+        <p class="text-center" *ngIf="todos.length==0">
+            <small>Resultado notas</small>
+        </p>
+        <li>
+            <ul>Média: <p id="media-final"></p> </ul>
+            <ul>Maior: <p id="maior-nota"></p></ul>
+            <ul>Menor: <p id="menor-nota"></p></ul>
+            <ul><p id="finalResult"></p></ul>
+        </li>
+    </ul>
+
+
+    <div id="modal" class="animated flipInX">
+        <h1 class="text-center">Notas</h1>
+        <form>
+                <input type="text" placeholder="1ª nota" maxlength="4" onkeyup="digitar('nota1')" id="nota1" ><i id="nota1-icon" onclick="limparInput('nota1')" class="far fa-trash-alt"></i><br>
+                <input type="text" placeholder="2ª nota" maxlength="4" onkeyup="digitar('nota2')" id="nota2" ><i id="nota2-icon" onclick="limparInput('nota2')" class="far fa-trash-alt"></i><br>
+                <input type="text" placeholder="3ª nota" maxlength="4" onkeyup="digitar('nota3')" id="nota3" ><i id="nota3-icon" onclick="limparInput('nota3')" class="far fa-trash-alt"></i><br>
+                <input type="text" placeholder="4ª nota" maxlength="4" onkeyup="digitar('nota4')" id="nota4" ><i id="nota4-icon" onclick="limparInput('nota4')" class="far fa-trash-alt"></i><br>
+                <p></p>
+                    <p class="text-center">
+                <button class="button" type="button" onclick="funcaoCalc()"><i class="far fa-save"></i> Calcular</button>
+                <button class="button" tyoe="button" onclick="funcaoClear()"><i class="fas fa-save"></i> Limpar</button>
+        </form>
+    </div> 
+
+</div>
+
+</body>
+
+
+</html>
