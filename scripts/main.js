@@ -20,6 +20,9 @@ function funcaoCalc() {
         }
     }
     let media = ((n1 + n2 + n3 + n4) / 4).toFixed(2);
+    maiorNota = maiorNota.toFixed(2);
+    menorNota = menorNota.toFixed(2);
+
     if (media >= 6) {
 
         trocarBackground(media);
@@ -29,15 +32,15 @@ function funcaoCalc() {
         document.getElementById('finalResult').innerHTML = '<p style="color:red;">Você está reprovado';
     }
     document.getElementById('media-final').innerHTML = media;
-    document.getElementById('maior-nota').innerHTML = maiorNota.toFixed(2);
-    document.getElementById('menor-nota').innerHTML = menorNota.toFixed(2);
+    document.getElementById('maior-nota').innerHTML = maiorNota;
+    document.getElementById('menor-nota').innerHTML = menorNota;
 }
 
 function funcaoClear() {
-    document.getElementById("nota1").value = '';
-    document.getElementById("nota2").value = '';
-    document.getElementById("nota3").value = '';
-    document.getElementById("nota4").value = '';
+    document.getElementById('nota1').value = '';
+    document.getElementById('nota2').value = '';
+    document.getElementById('nota3').value = '';
+    document.getElementById('nota4').value = '';
     document.getElementById('media-final').innerHTML = '';
     document.getElementById('maior-nota').innerHTML = '';
     document.getElementById('menor-nota').innerHTML = '';
@@ -49,51 +52,53 @@ Object.onkeyup = function () {
 }
 
 function digitar(inputName) {
+
     let n = document.getElementById(inputName);
 
-    if (n.value.length >= 1 && n.value.length < 3) {
-        parseFloat(
-            n.value = n.value + '.'
-        );
-    }
+    if (n.value <= 10) {
+        if (n.value.length >= 1 && n.value.length < 3) {
+            parseFloat(
+                n.value = n.value + '.'
+            );
+        }
 
-    if (n.value.length == 4) {
+        if (n.value.length == 4) {
+            n.setAttribute('readonly', true);
+            let icon = document.getElementById(`${inputName}-icon`);
+            icon.classList.remove('d-none');
+        }
+
+
+    } else {
         n.setAttribute('readonly', true);
         let icon = document.getElementById(`${inputName}-icon`);
         icon.classList.remove('d-none');
     }
-
-
 }
-
 
 function limparInput(inputName) {
     document.getElementById(inputName).value = '';
-    let icon = document.getElementById(inputName);
+    let icon = document.getElementById(`${inputName}-icon`);
     icon.classList.add('d-none');
     let n = document.getElementById(inputName);
     n.removeAttribute('readonly');
 }
 
-
 function trocarBackground(media) {
-    console.log(media);
     if (media >= 6) {
         return (
             document.body.style.background = "-webkit-linear-gradient(left, rgb(61, 173, 70), rgb(224, 230, 220)",
             document.body.style.background = "-o-linear-gradient(right, rgb(61, 173, 70), rgb(224, 230, 220)",
-            document.body.style.background = "-moz-linear-gradient(right, rgb(61, 173, 70), rgb(224, 230, 220)", 
-            document.body.style.background = "linear-gradient(to right,rgb(61, 173, 70), rgb(224, 230, 220)", 
+            document.body.style.background = "-moz-linear-gradient(right, rgb(61, 173, 70), rgb(224, 230, 220)",
+            document.body.style.background = "linear-gradient(to right,rgb(61, 173, 70), rgb(224, 230, 220)",
             document.body.style.backgroundColor = "rgb(61, 173, 70)"
         );
     }
-        return(
-            document.body.style.background = "-webkit-linear-gradient(left, rgb(173, 61, 61), rgb(224, 230, 220)",
-            document.body.style.background = "-o-linear-gradient(right, rgb(173, 61, 61), rgb(224, 230, 220)",
-            document.body.style.background = "-moz-linear-gradient(right, rgb(173, 61, 61), rgb(224, 230, 220)",
-            document.body.style.background = "linear-gradient(to right,rgb(173, 61, 61), rgb(224, 230, 220)",
-            document.body.style.backgroundColor = "rgb(173, 61, 61)"
-        );
-
-
+    return (
+        document.body.style.background = "-webkit-linear-gradient(left, rgb(173, 61, 61), rgb(224, 230, 220)",
+        document.body.style.background = "-o-linear-gradient(right, rgb(173, 61, 61), rgb(224, 230, 220)",
+        document.body.style.background = "-moz-linear-gradient(right, rgb(173, 61, 61), rgb(224, 230, 220)",
+        document.body.style.background = "linear-gradient(to right,rgb(173, 61, 61), rgb(224, 230, 220)",
+        document.body.style.backgroundColor = "rgb(173, 61, 61)"
+    );
 }

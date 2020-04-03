@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <script src="scripts/main.js"></script>
 </head>
 
-<body id="body">
+<body>
 
     <div class="container">
         <ul class="animated flipInX">
@@ -38,27 +38,22 @@
                 <small>Notas</small>
             </p>
             <form>
-                <!--<input type="number" class="form-control" id="exampleInputPassword1">-->
                 <input type="text" placeholder="1ª nota" onkeyup="digitar('nota1')" maxlength="5" id="nota1"><i
-                    id="nota1-icon" onclick="limparInput('nota1')" class="far fa-trash-alt d-none"
-                    pattern="/^[0-9]+\.?[0-9]*$/"></i><br>
+                    id="nota1-icon" class="far fa-trash-alt d-none" onclick="limparInput('nota1')"></i><br>
                 <input type="text" placeholder="2ª nota" onkeyup="digitar('nota2')" maxlength="5" id="nota2"><i
-                    id="nota2-icon" onclick="limparInput('nota2')" class="far fa-trash-alt d-none"></i><br>
+                    id="nota2-icon" class="far fa-trash-alt d-none" onclick="limparInput('nota2')"></i><br>
                 <input type="text" placeholder="3ª nota" onkeyup="digitar('nota3')" maxlength="5" id="nota3"><i
-                    id="nota3-icon" onclick="limparInput('nota3')" class="far fa-trash-alt d-none"></i><br>
+                    id="nota3-icon" class="far fa-trash-alt d-none" onclick="limparInput('nota3')"></i><br>
                 <input type="text" placeholder="4ª nota" onkeyup="digitar('nota4')" maxlength="5" id="nota4"><i
-                    id="nota4-icon" onclick="limparInput('nota4')" class="far fa-trash-alt d-none"></i><br>
+                    id="nota4-icon" class="far fa-trash-alt d-none" onclick="limparInput('nota4')"></i><br>
                 <p class="text-center">
-                    <button class="button" type="button" onclick="funcaoCalc()"><i class="far fa-save"></i>
+                    <button class="button" type="button" onclick="funcaoCalc()"><i class="fas fa-calculator"></i>
                         Calcular</button>
-                    <button class="button" tyoe="button" onclick="funcaoClear()"><i class="fas fa-save"></i>
+                    <button class="button" tyoe="button" onclick="funcaoClear()"><i class="fas fa-window-close"></i>
                         Limpar</button>
             </form>
         </div>
     </div>
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
