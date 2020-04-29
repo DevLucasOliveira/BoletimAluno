@@ -102,3 +102,17 @@ function trocarBackground(media) {
         document.body.style.backgroundColor = "rgb(173, 61, 61)"
     );
 }
+
+function validateForm() {
+    var n1 = document.forms["notasForm"]["nota1"].value;
+    var n2 = document.forms["notasForm"]["nota2"].value;
+    var n3 = document.forms["notasForm"]["nota3"].value;
+    var n4 = document.forms["notasForm"]["nota4"].value;
+
+    if (n1 == "" || n2 == "" || n3 == "" || n4 == "") {
+        alert("Preencha todos os campos");
+        return false;
+    }
+
+    this.funcaoCalc();
+}

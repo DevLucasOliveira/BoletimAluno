@@ -37,7 +37,7 @@
             <p class="text-center">
                 <small>Notas</small>
             </p>
-            <form>
+            <form name="notasForm" method="POST">
                 <input type="text" placeholder="1ª nota" onkeyup="digitar('nota1')" maxlength="5" id="nota1"><i
                     id="nota1-icon" class="far fa-trash-alt d-none" onclick="limparInput('nota1')"></i><br>
                 <input type="text" placeholder="2ª nota" onkeyup="digitar('nota2')" maxlength="5" id="nota2"><i
@@ -47,7 +47,7 @@
                 <input type="text" placeholder="4ª nota" onkeyup="digitar('nota4')" maxlength="5" id="nota4"><i
                     id="nota4-icon" class="far fa-trash-alt d-none" onclick="limparInput('nota4')"></i><br>
                 <p class="text-center">
-                    <button class="button" type="button" onclick="funcaoCalc()"><i class="fas fa-calculator"></i>
+                    <button class="button" type="button" onclick="validateForm()"><i class="fas fa-calculator"></i>
                         Calcular</button>
                     <button class="button" tyoe="button" onclick="funcaoClear()"><i class="fas fa-window-close"></i>
                         Limpar</button>
